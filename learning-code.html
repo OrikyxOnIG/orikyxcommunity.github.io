@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Cheatsheets</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(to bottom, black, gold);
+    color: white;
+    padding: 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid gold;
+    color: gold;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cheatsheet Sections */
+.cheatsheet {
+    margin-bottom: 30px;
+}
+
+.cheatsheet h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px black;
+    color: gold;
+    text-align: left;
+}
+
+/* Code Box */
+.code-box {
+    background-color: #1e1e1e; /* Black Visual Studio-inspired background */
+    border: 2px solid gold;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto; /* Allow horizontal scrolling for wide code */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.code-box code {
+    color: #d4d4d4; /* Light grey text for code */
+    font-size: 0.9rem;
+    display: block;
+    white-space: pre; /* Keep indentation */
+}
+
+/* Highlighting */
+.code-box code .keyword {
+    color: #569cd6; /* Blue for keywords */
+}
+
+.code-box code .string {
+    color: #ce9178; /* Orange for strings */
+}
+
+.code-box code .function {
+    color: #dcdcaa; /* Yellow for function names */
+}
+
+.code-box code .comment {
+    color: #6a9955; /* Green for comments */
+}
+
+/* Scrollbar Styling */
+.code-box::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.code-box::-webkit-scrollbar-thumb {
+    background: gold;
+    border-radius: 4px;
+}
+
+.code-box::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .cheatsheet h2 {
+        font-size: 1.5rem;
+    }
+
+    .code-box code {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cheatsheet h2 {
+        font-size: 1.3rem;
+    }
+
+    .code-box code {
+        font-size: 0.75rem;
+    }
+}</style></head>
+<body>
+    <header>
+        <h1>Programming Cheatsheets</h1>
+    </header>
+
+    <main>
+        <!-- C++ -->
+        <section class="cheatsheet">
+            <h2>C++</h2>
+            <div class="code-box">
+                <pre><code>
+// Basic Syntax
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}
+
+// Advanced: Templates
+template <typename t>
+T add(T a, T b) {
+    return a + b;
+}
+                </typename></iostream></code></pre>
+            </div>
+        </section>
+
+        <!-- Python -->
+        <section class="cheatsheet">
+            <h2>Python</h2>
+            <div class="code-box">
+                <pre><code>
+# Basic Syntax
+print("Hello, World!")
+
+# Advanced: Decorators
+def decorator(func):
+    def wrapper():
+        print("Before the function")
+        func()
+        print("After the function")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello!")
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- PHP -->
+        <section class="cheatsheet">
+            <h2>PHP</h2>
+            <div class="code-box">
+                <pre><code>
+<!--?php
+// Basic Syntax
+echo "Hello, World!";
+
+// Advanced: Object-Oriented Programming
+class Animal {
+    public $name;
+    public function __construct($name) {
+        $this--->name = $name;
+    }
+    public function speak() {
+        echo "$this-&gt;name says hello!";
+    }
+}
+
+$dog = new Animal("Dog");
+$dog-&gt;speak();
+?&gt;
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- Java -->
+        <section class="cheatsheet">
+            <h2>Java</h2>
+            <div class="code-box">
+                <pre><code>
+// Basic Syntax
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+// Advanced: Streams
+List<string> names = Arrays.asList("Alice", "Bob", "Charlie");
+names.stream()
+     .filter(name -&gt; name.startsWith("A"))
+     .forEach(System.out::println);
+                </string></code></pre>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <section class="cheatsheet">
+            <h2>JavaScript</h2>
+            <div class="code-box">
+                <pre><code>
+// Basic Syntax
+console.log("Hello, World!");
+
+// Advanced: Async/Await
+async function fetchData() {
+    const response = await fetch("https://api.example.com");
+    const data = await response.json();
+    console.log(data);
+}
+fetchData();
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- HTML -->
+        <section class="cheatsheet">
+            <h2>HTML</h2>
+            <div class="code-box">
+                <pre><code>
+<!-- Basic Structure -->
+
+
+
+    <title>Hello World</title>
+
+
+    <h1>Hello, World!</h1>
+
+</code></pre></div></section></main><!-- Advanced: Semantic Elements --><article><code>
+    <header>
+        <h1>Article Title</h1>
+    </header>
+    <section>
+        <p>Content goes here...</p>
+    </section>
+    <footer>
+        <p>Written by Author</p>
+    </footer>
+</code></article><code>
+                </code>
+            
+        
+
+        <!-- CSS -->
+        <section class="cheatsheet">
+            <h2>CSS</h2>
+            <div class="code-box">
+                <pre><code>
+/* Basic Syntax */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Advanced: Flexbox */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- SQL -->
+        <section class="cheatsheet">
+            <h2>SQL</h2>
+            <div class="code-box">
+                <pre><code>
+-- Basic Query
+SELECT * FROM users;
+
+-- Advanced: Joins
+SELECT orders.id, users.name
+FROM orders
+INNER JOIN users
+ON orders.user_id = users.id;
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- XML -->
+        <section class="cheatsheet">
+            <h2>XML</h2>
+            <div class="code-box">
+                <pre><code>
+<!-- Basic Structure -->
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    Don't forget me this weekend!
+</note>
+
+<!-- Advanced: Namespaces -->
+<root xmlns:ns1="http://example.com/ns1">
+    <ns1:item>Example</ns1:item>
+</root>
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- Add other languages in a similar manner -->
+
+    
+
+</body></html>
+
+

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Login Form with Sidebar</title> 
+  <link rel="stylesheet" href="styles.css"> 
+ <style type="text/css" id="dcoder_stylesheet">/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling when sidebar is open */
+    background: linear-gradient(to bottom right, black, gold);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: black;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    overflow: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: gold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: white;
+}
+
+/* Close Button */
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.open-sidebar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: gold;
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Login Form */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card h1 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: gold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #d4af37;
+}
+
+.links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.links a {
+    color: white;
+    background: black;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.links a:hover {
+    background: gold;
+    color: black;
+}</style></head> 
+ <body> <!-- Sidebar --> 
+  <div class="sidebar" id="sidebar"> <button class="close-sidebar" id="close-sidebar">×</button> 
+   <ul class="sidebar-links"> 
+    <li><a href="website.html">Home</a></li> 
+    <li><a href="sign-up.html">Sign Up</a></li> 
+    <li><a href="forgot-password.html">Forgot Password</a></li> 
+   </ul> 
+  </div> <!-- Main Content --> 
+  <div class="main-content"> <button class="open-sidebar" id="open-sidebar">☰ Menu</button> 
+   <div class="login-container"> 
+    <div class="login-card"> 
+     <h1>Login</h1> 
+     <form id="login-form"> 
+      <div class="input-group"> <label for="username">Username</label> 
+       <input type="text" id="username" name="username" placeholder="Enter your username" required> 
+      </div> 
+      <div class="input-group"> <label for="password">Password</label> 
+       <input type="password" id="password" name="password" placeholder="Enter your password" required> 
+      </div> 
+      <div class="actions"> <button type="submit" class="login-button">Login</button> 
+      </div> 
+      <div class="links"> <a href="#">Forgot Password</a> <a href="sign-up.html" class="sign-up-button">Sign Up</a> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+  </div> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">document.getElementById("login-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (!username || !password) {
+        alert("Please fill in both fields!");
+    } else {
+        alert(`Welcome, ${username}!`);
+        // You can add further functionality here, such as redirecting or API calls
+    }
+});
+const sidebar = document.getElementById("sidebar");
+const openSidebarButton = document.getElementById("open-sidebar");
+const closeSidebarButton = document.getElementById("close-sidebar");
+
+// Open Sidebar
+openSidebarButton.addEventListener("click", () => {
+    sidebar.style.top = "0";
+});
+
+// Close Sidebar
+closeSidebarButton.addEventListener("click", () => {
+    sidebar.style.top = "-100%";
+});</script></body></html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orikyx's Programming Community</title>
+  <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">/* General styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, black, gold);
+  color: white;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header styling */
+header {
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'), linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+  background-size: cover, cover;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds depth to the text */
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Instagram Image Styling */
+.instagram-section {
+  margin-top: auto; /* Pushes it to the bottom of the sidebar */
+  padding: 20px;
+  text-align: center;
+}
+
+.instagram-img {
+  width: 100%;
+  max-width: 200px; /* Limit image size */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar toggle button (for mobile) */
+.sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Main content */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  padding-top: 60px; /* Adjust for the header */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: white;
+}
+
+/* Button styling */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: white;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar sections */
+.auth-section ul {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.content-section ul {
+  padding-top: 20px;
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 768px) {
+  /* Make the sidebar visible on toggle */
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  /* When the sidebar is open, make it visible */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Adjust the main content for smaller screens */
+  .main {
+    padding-top: 60px;
+  }
+
+  /* Style the toggle button for smaller screens */
+  .sidebar-toggle {
+    display: block;
+  }
+
+  /* Hide the Log In and Sign Up buttons for mobile */
+  .auth-buttons {
+    display: none;
+  }
+}
+
+/* Larger screens */
+@media screen and (min-width: 769px) {
+  .sidebar-toggle {
+    display: none; /* Hide the sidebar toggle button on large screens */
+  }
+
+  /* Keep sidebar visible */
+  .sidebar {
+    left: 0;
+    width: 250px;
+  }
+
+  .main {
+    padding-left: 270px; /* Adjust for the sidebar */
+  }
+}</style></head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Orikyx's Programming Community</h1>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <div class="auth-section">
+      <ul>
+        <li><a href="log-in.html" target="_blank">Log In</a></li>
+        <li><a href="sign-ups.html" target="_blank">Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="content-section">
+      <ul>
+        <li><a href="learning-code.html" target="_blank">Learning Code</a></li>
+        <li><a href="cybersecurity.html" target="_blank">Cybersecurity</a></li>
+        <li><a href="ps3-programming.html" target="_blank">PS3 Programming</a></li>
+      </ul>
+    </div>
+
+    <!-- Instagram Image at the bottom -->
+    <div class="instagram-section">
+      <img src="Screenshot_20241212_211808~2.png" alt="Instagram Page" class="instagram-img">
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="buttons">
+      <a href="https://instagram.com/freeorikyx" target="_blank" class="button">Instagram</a>
+      <a href="https://discord.gg/ZPXh9xUW8A" target="_blank" class="button">Discord</a>
+      <a href="https://facebook.com/BrysonHarvey" target="_blank" class="button">Facebook</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">// script.js
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open');
+}</script></body></html>
